@@ -11,11 +11,6 @@ interface EmitStaticOptions {
   componentNames: string[];
 }
 
-let total = 0;
-
-/** Har bir output formatida (esm/cjs) bir marta ishlaydigan rolldown plugin.
- *  Faqat generatsiya funksiyalarini chaqiradi va natijani diskka yozadi —
- *  mantiq bu yerda emas, yuqoridagi sof funksiyalarda. */
 export function emitStatic({ svgFiles, componentNames }: EmitStaticOptions): Plugin {
   return {
     name: "flake-forge/sf-icons/emit-static",
@@ -39,9 +34,6 @@ export function emitStatic({ svgFiles, componentNames }: EmitStaticOptions): Plu
       writeFileSync(join(distReact, "index.d.ts"), indexDts(componentNames));
       writeFileSync(join(distReact, "index.mjs"), esmIndex(componentNames));
       writeFileSync(join(distReact, "index.cjs"), cjsIndex(componentNames));
-
-      writeFileSync(join(dist, "count.txt"), total.toString());
-      total++;
     },
   };
 }

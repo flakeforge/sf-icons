@@ -1,4 +1,3 @@
-// esm-index.ts
 export function esmIndex(componentNames: string[]): string {
   return [
     "// Generated file. Do not edit.",

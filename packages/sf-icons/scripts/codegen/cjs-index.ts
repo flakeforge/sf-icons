@@ -1,4 +1,3 @@
-// cjs-index.ts
 export function cjsIndex(componentNames: string[]): string {
   return [
     "\"use strict\";",
