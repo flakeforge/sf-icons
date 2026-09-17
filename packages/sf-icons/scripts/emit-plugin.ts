@@ -4,6 +4,7 @@ import { join } from "node:path";
 import { cjsIndex } from "./codegen/cjs-index.js";
 import { componentDts, indexDts } from "./codegen/dts.js";
 import { esmIndex } from "./codegen/esm-index.js";
+import { rootIndex } from "./codegen/root-index.js";
 import { optimizeSvgFile, type SvgFile } from "./svg.js";
 
 interface EmitStaticOptions {
@@ -34,6 +35,10 @@ export function emitStatic({ svgFiles, componentNames }: EmitStaticOptions): Plu
       writeFileSync(join(distReact, "index.d.ts"), indexDts(componentNames));
       writeFileSync(join(distReact, "index.mjs"), esmIndex(componentNames));
       writeFileSync(join(distReact, "index.cjs"), cjsIndex(componentNames));
+
+      writeFileSync(join(dist, "index.d.ts"), rootIndex("dts"));
+      writeFileSync(join(dist, "index.mjs"), rootIndex("esm"));
+      writeFileSync(join(dist, "index.cjs"), rootIndex("cjs"));
     },
   };
 }
