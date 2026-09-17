@@ -1,0 +1,64 @@
+{
+  "name": "@flakeforge/sf-icons",
+  "version": "0.0.1",
+  "description": "Apple SF Symbols as icons: optimized SVGs and framework components.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "author": "Flake Forge <oss@flakeforge.com> (https://github.com/flakeforge)",
+  "maintainers": [
+    "Muhammaddiyor Tohirov <oss@takhirov.uz> (https://takhirov.uz)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flakeforge/sf-icons.git"
+  },
+  "homepage": "https://github.com/flakeforge/sf-icons",
+  "bugs": {
+    "url": "https://github.com/flakeforge/sf-icons/issues"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.mjs",
+      "require": "./dist/react/index.cjs"
+    },
+    "./react/*": {
+      "types": "./dist/react/*.d.ts",
+      "import": "./dist/react/*.mjs",
+      "require": "./dist/react/*.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm run build:react && pnpm run build:bundle",
+    "build:react": "node scripts/convert-react.mjs",
+    "build:bundle": "rolldown --config rolldown.config.ts",
+    "lint": "eslint ."
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@flakeforge/config": "workspace:*",
+    "@types/node": "^22.20.3",
+    "@types/react": "^19.3.0",
+    "eslint": "^10.10.0",
+    "react": "^19.3.0",
+    "rolldown": "^1.2.8",
+    "rolldown-plugin-dts": "^0.28.6",
+    "svgo": "^4.1.0",
+    "typescript": "catalog:"
+  }
+}

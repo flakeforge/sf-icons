@@ -1,0 +1,42 @@
+{
+  "name": "flakeforge/sf-icons-root",
+  "private": true,
+  "version": "0.0.1",
+  "packageManager": "pnpm@11.22.0",
+  "description": "Monorepo for @flakeforge SF Symbols icon packages.",
+  "scripts": {
+    "build": "turbo run build",
+    "lint": "turbo run lint"
+  },
+  "author": "Flake Forge <oss@flakeforge.com> (https://github.com/flakeforge)",
+  "maintainers": [
+    "Muhammaddiyor Tohirov <oss@takhirov.uz> (https://takhirov.uz)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flakeforge/sf-icons.git",
+    "directory": "packages/sf-icons"
+  },
+  "homepage": "https://github.com/flakeforge/sf-icons",
+  "bugs": {
+    "url": "https://github.com/flakeforge/sf-icons/issues",
+    "email": "bugs@flakeforge.com"
+  },
+  "keywords": [
+    "sf-symbols",
+    "icons",
+    "flakeforge",
+    "monorepo"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "turbo": "^2.10.13",
+    "typescript": "catalog:"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.22.0"
+    }
+  }
+}

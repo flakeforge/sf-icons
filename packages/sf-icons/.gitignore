@@ -1,0 +1,15 @@
+# dependencies
+node_modules
+
+# turbo
+.cache
+.turbo
+
+# output
+out
+dist
+*.tgz
+
+# iconsreact
+src/
+icons/

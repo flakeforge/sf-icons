@@ -1,0 +1,5 @@
+# Normalise line endings; format-sensitive files declared explicitly.
+* text=auto eol=lf
+
+# Lockfiles and generated code: keep, but do not diff.
+pnpm-lock.yaml -diff linguist-generated

@@ -1,0 +1,28 @@
+{
+  "name": "@flakeforge/config",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Shared tsconfig and eslint presets for @flakeforge packages.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "eslint",
+    "tsconfig"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./tsconfig/*": "./tsconfig/*",
+    "./eslint/*": "./eslint/*"
+  },
+  "peerDependencies": {
+    "eslint": ">=9"
+  },
+  "dependencies": {
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint-plugin-perfectionist": "^5.11.0",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^6.0.0",
+    "typescript-eslint": "^8.70.0"
+  }
+}
